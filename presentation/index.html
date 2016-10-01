@@ -1,0 +1,200 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<link rel="stylesheet" href="css/custom.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Running a Headless Plex Media Server</h1>
+					<p>
+						Presented by
+						<a href="http://xcjs.com/">Zackary Lowery</a>
+						<br>
+						at Leading Edje on
+						October 6th, 2016
+					</p>
+				</section>
+				<section>
+					<h1>
+						What is Plex?
+					</h1>
+					<div class="fragment">
+						<a href="https://plex.tv" class="float-right">
+							<img src="images/plex-logo.png" alt="Plex Logo">
+						</a>
+						<p>
+							<a href="https://plex.tv/">Plex</a>
+							is a media server you can use to stream
+							music, photos, and video to any device on your 
+							network or the Internet.
+						</p>
+					</div>
+				</section>
+				<section>
+					<h1>Why?</h1>
+					<ul>
+						<li class="fragment">
+							You can access your media anywhere - save storage
+							on your mobile device! Plex becomes a
+							do-it-yourself Netflix server and more.
+						</li>
+						<li class="fragment">
+							If a song, movie, or TV show is added, Plex will
+							automatically figure out what it is and add 
+							searchable information about it.
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h1>What You Will Need</h1>
+					<ol>
+						<li class="fragment">
+							An old or cheap computer - even a $35 Raspberry Pi
+							will do!
+						</li>
+						<li class="fragment">
+							<a href="http://www.ubuntu.com/" class="body-height">
+								<img src="images/ubuntu-logo.svg" alt="Ubuntu Logo">
+							</a>
+							Linux install media - this tutorial uses the Ubuntu
+							distribution
+						</li>
+						<li class="fragment">
+							An Internet connection
+						</li>
+					</ol>
+				</section>
+				<section>
+					<h1>Post Ubuntu/Linux Installation</h1>
+				</section>
+				<section>
+					<h1>Install SSH</h1>
+					<p>
+						Let's install SSH to send commands to our server!
+					</p>
+					<pre><code class="hljs bash">apt install openssh-server</code></pre>
+				</section>
+				<section>
+					<h1>Going Headless</h1>
+					<p>
+						The server can now be detached from a monitor and and
+						input devices.
+					</p>
+					<p>
+						As long as it's connected to a network, we're good to 
+						go!
+					</p>
+				</section>
+				<section>
+					<h1>Install an SSH Client</h1>
+					<p class="fragment">
+						On your primary machine, install an SSH client. Linux
+						or Mac users should have one built in.
+					</p>
+					<div class="fragment">
+						<p>
+							Windows users can install one of the following:
+						</p>
+						<ul>
+							<li>
+								<a href="http://www.putty.org/" class="body-height">
+									<img src="images/putty-logo.png" alt="Putty Logo">								
+									Putty
+								</a>
+							</li>
+							<li>
+								<a href="https://git-scm.com/" class="body-height">
+									<img src="images/git-logo.svg" alt="Git Logo">
+									Git Bash
+								</a>								
+							</li>
+							<li>
+								<a href="https://www.cygwin.com/" class="body-height">
+									<img src="images/cygwin-logo.svg" alt="Cygwin Logo">
+									Cygwin
+								</a>								
+							</li>
+						</ul>
+					</div>					
+				</section>
+				<section>
+					<h1>Post-SSH Client Setup</h1>
+				</section>
+				<section>
+					<section>
+						<h1>User Setup</h1>
+						<p>
+							Let's setup a user that will be used to manage the 
+							server day-to-day that isn't root.
+						</p>
+						<pre><code class="hljs bash">adduser {{username}}</code></pre>
+					</section>
+					<section>
+						<h1>Granting Administrative Privileges</h1>
+						<p>
+							We still want to be able to install software, 
+							updates, and modify our system. To do this, we need
+							to add the user to the sudo group.
+						</p>
+						<pre><code class="hljs bash">usermod -aG sudo {{username}}</code></pre>
+					</section>
+					<section>
+						<h1>Test the New User Account</h1>
+						<p>
+							Disconnect as root and make sure the new account
+							works as expected. In fact, let's check for updates!
+						</p>
+						<pre><code class="hljs bash">sudo apt update &amp;&amp; sudo apt upgrade</code></pre>
+						<p>
+							Note that system commands that can alter the system
+							must now be preceeded with "sudo".
+						</p>
+					</section>				
+				</section>
+				<section>
+					<h1></h1>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>

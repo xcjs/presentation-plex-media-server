@@ -1,0 +1,30 @@
+.reveal .slides {
+	text-align: left;
+}
+
+.reveal .slides h1 {
+	font-size: 3.25rem;
+	text-align: center;
+}
+
+.reveal .body-height {
+	display: inline-block;
+	height: 38px;
+	width: auto;
+}
+
+.reveal .body-height > * {
+	vertical-align: middle;
+}
+
+.reveal .body-height > img {
+	background: transparent;
+	border-width: 0;
+}
+
+.reveal .float-right {
+	float: right;
+	height: auto;
+	margin: 0 0 1rem 1rem;
+	max-width: 25%;
+}
