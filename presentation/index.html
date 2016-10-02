@@ -110,8 +110,8 @@
 				<section>
 					<h1>Install an SSH Client</h1>
 					<p class="fragment fade-up">
-						On your primary machine, install an SSH client. Linux
-						or Mac users should have one built in.
+						On your primary computing device, install an SSH client.
+						Linux or Mac users should have one built in.
 					</p>
 					<div class="fragment fade-up">
 						<p>
@@ -177,6 +177,37 @@
 					<h1>Disable Remote Root Access</h1>
 					<pre><code class="hljs bash">sudo sed -i "/^PermitRootLogin/c\PermitRootLogin no" /etc/ssh/sshd_config</code></pre>
 					<pre><code class="hljs bash">sudo service ssh reload</code></pre>
+				</section>
+				<section>
+					<h1>Install Git to Clone a Helper Script</h1>
+					<pre><code class="hljs bash">sudo apt install git</code></pre>
+				</section>
+				<section>
+					<section>
+						<h1>Clone the Plex Update Script</h1>
+						<pre><code class="hljs bash">sudo git clone https://github.com/mrworf/plexupdate.git /opt/plexupdate</code></pre>
+						<p class="fragment fade-up">
+							Why /opt? /opt is for unbundled software not provided by a package manager.
+						</p>
+					</section>
+					<section>
+						<h1>Symlinking into the Path</h1>
+						<pre><code class="hljs bash">sudo ln -s /opt/plexupdate/plexupdate.sh /usr/local/bin/plexupdate</code></pre>
+					</section>
+				</section>
+				<section>
+					<h1>Install Plex</h1>
+					<pre><code class="hljs bash">sudo plexupdate -p -a</code></pre>
+				</section>
+				<section>
+					<h1>Accessing Plex</h1>
+					<p>
+						Open a web browser on your primary computing device and
+						access your Plex server at the specified URL.
+					</p>
+					<a href="http://{{servername}}:32400/plex/web/index.html">
+						<pre><code>http://{{servername}}:32400/plex/web/index.html</code></pre>
+					</a>
 				</section>
 			</div>
 		</div>
