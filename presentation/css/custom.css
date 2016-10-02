@@ -1,3 +1,7 @@
+.reveal pre {
+	width: auto;
+}
+
 .reveal .slides {
 	text-align: left;
 }

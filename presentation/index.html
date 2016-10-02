@@ -40,7 +40,7 @@
 					<h1>
 						What is Plex?
 					</h1>
-					<div class="fragment">
+					<div class="fragment fade-up">
 						<a href="https://plex.tv" class="float-right">
 							<img src="images/plex-logo.png" alt="Plex Logo">
 						</a>
@@ -55,12 +55,12 @@
 				<section>
 					<h1>Why?</h1>
 					<ul>
-						<li class="fragment">
+						<li class="fragment fade-up">
 							You can access your media anywhere - save storage
 							on your mobile device! Plex becomes a
 							do-it-yourself Netflix server and more.
 						</li>
-						<li class="fragment">
+						<li class="fragment fade-up">
 							If a song, movie, or TV show is added, Plex will
 							automatically figure out what it is and add 
 							searchable information about it.
@@ -70,18 +70,18 @@
 				<section>
 					<h1>What You Will Need</h1>
 					<ol>
-						<li class="fragment">
+						<li class="fragment fade-up">
 							An old or cheap computer - even a $35 Raspberry Pi
 							will do!
 						</li>
-						<li class="fragment">
+						<li class="fragment fade-up">
 							<a href="http://www.ubuntu.com/" class="body-height">
 								<img src="images/ubuntu-logo.svg" alt="Ubuntu Logo">
 							</a>
 							Linux install media - this tutorial uses the Ubuntu
 							distribution
 						</li>
-						<li class="fragment">
+						<li class="fragment fade-up">
 							An Internet connection
 						</li>
 					</ol>
@@ -109,11 +109,11 @@
 				</section>
 				<section>
 					<h1>Install an SSH Client</h1>
-					<p class="fragment">
+					<p class="fragment fade-up">
 						On your primary machine, install an SSH client. Linux
 						or Mac users should have one built in.
 					</p>
-					<div class="fragment">
+					<div class="fragment fade-up">
 						<p>
 							Windows users can install one of the following:
 						</p>
@@ -174,7 +174,9 @@
 					</section>				
 				</section>
 				<section>
-					<h1></h1>
+					<h1>Disable Remote Root Access</h1>
+					<pre><code class="hljs bash">sudo sed -i "/^PermitRootLogin/c\PermitRootLogin no" /etc/ssh/sshd_config</code></pre>
+					<pre><code class="hljs bash">sudo service ssh reload</code></pre>
 				</section>
 			</div>
 		</div>
