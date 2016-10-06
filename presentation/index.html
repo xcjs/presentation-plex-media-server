@@ -28,6 +28,7 @@
 			<div class="slides">
 				<section>
 					<h1>Running a Headless Plex Media Server</h1>
+					<h2>(...or learning the Linux command line the hard way)</h2>
 					<p>
 						Presented by
 						<a href="http://xcjs.com/">Zackary Lowery</a>
@@ -37,112 +38,112 @@
 					</p>
 				</section>
 				<section>
-					<h1>
-						What is Plex?
-					</h1>
-					<div class="fragment fade-up">
-						<a href="https://plex.tv" class="float-right">
-							<img src="images/plex-logo.png" alt="Plex Logo">
-						</a>
-						<p>
-							<a href="https://plex.tv/">Plex</a>
-							is a media server you can use to stream
-							music, photos, and video to any device on your 
-							network or the Internet.
-						</p>
-					</div>
-				</section>
-				<section>
-					<h1>Why?</h1>
-					<ul>
-						<li class="fragment fade-up">
-							You can access your media anywhere - save storage
-							on your mobile device! Plex becomes a
-							do-it-yourself Netflix server and more.
-						</li>
-						<li class="fragment fade-up">
-							If a song, movie, or TV show is added, Plex will
-							automatically figure out what it is and add 
-							searchable information about it.
-						</li>
-					</ul>
-				</section>
-				<section>
-					<h1>What You Will Need</h1>
-					<ol>
-						<li class="fragment fade-up">
-							An old or cheap computer - even a $35 Raspberry Pi
-							will do!
-						</li>
-						<li class="fragment fade-up">
-							<a href="http://www.ubuntu.com/" class="body-height">
-								<img src="images/ubuntu-logo.svg" alt="Ubuntu Logo">
+					<section>
+						<h1>
+							What is Plex?
+						</h1>
+						<div class="fragment fade-up">
+							<a href="https://plex.tv" class="float-right">
+								<img src="images/plex-logo.png" alt="Plex Logo">
 							</a>
-							Linux install media - this tutorial uses the Ubuntu
-							distribution
-						</li>
-						<li class="fragment fade-up">
-							An Internet connection
-						</li>
-					</ol>
-				</section>
-				<section>
-					<h1>Post Ubuntu/Linux Installation</h1>
-				</section>
-				<section>
-					<h1>Install SSH</h1>
-					<p>
-						Let's install SSH to send commands to our server!
-					</p>
-					<pre><code class="hljs bash">apt install openssh-server</code></pre>
-				</section>
-				<section>
-					<h1>Going Headless</h1>
-					<p>
-						The server can now be detached from a monitor and and
-						input devices.
-					</p>
-					<p>
-						As long as it's connected to a network, we're good to 
-						go!
-					</p>
-				</section>
-				<section>
-					<h1>Install an SSH Client</h1>
-					<p class="fragment fade-up">
-						On your primary computing device, install an SSH client.
-						Linux or Mac users should have one built in.
-					</p>
-					<div class="fragment fade-up">
-						<p>
-							Windows users can install one of the following:
-						</p>
+							<p>
+								<a href="https://plex.tv/">Plex</a>
+								is a media server you can use to stream
+								music, photos, and video to any device on your 
+								network or the Internet.
+							</p>
+						</div>
+					</section>
+					<section>
+						<h1>Why?</h1>
 						<ul>
-							<li>
-								<a href="http://www.putty.org/" class="body-height">
-									<img src="images/putty-logo.png" alt="Putty Logo">								
-									Putty
-								</a>
+							<li class="fragment fade-up">
+								Private Netflix server and Internet radio
 							</li>
-							<li>
-								<a href="https://git-scm.com/" class="body-height">
-									<img src="images/git-logo.svg" alt="Git Logo">
-									Git Bash
-								</a>								
-							</li>
-							<li>
-								<a href="https://www.cygwin.com/" class="body-height">
-									<img src="images/cygwin-logo.svg" alt="Cygwin Logo">
-									Cygwin
-								</a>								
+							<li class="fragment fade-up">
+								You don't know what it is? Plex does.
 							</li>
 						</ul>
-					</div>					
+					</section>
+					<section>
+						<h1>What You Will Need</h1>
+						<ol>
+							<li class="fragment fade-up">
+								An old or cheap computer - even a $35 Raspberry Pi
+								will do!
+							</li>
+							<li class="fragment fade-up">
+								<a href="http://www.ubuntu.com/" class="body-height">
+									<img src="images/ubuntu-logo.svg" alt="Ubuntu Logo">
+								</a>
+								Linux install media - this tutorial uses the Ubuntu
+								distribution
+							</li>
+							<li class="fragment fade-up">
+								An Internet connection
+							</li>
+						</ol>
+					</section>
 				</section>
 				<section>
-					<h1>Post-SSH Client Setup</h1>
+					<section>
+						<h1>Post Ubuntu/Linux Installation</h1>
+					</section>
+					<section>
+						<h1>Install SSH</h1>
+						<p>
+							Let's install SSH to send commands to our server!
+						</p>
+						<pre><code class="hljs bash">apt install openssh-server</code></pre>
+					</section>
+					<section>
+						<h1>Going Headless</h1>
+						<p>
+							The server can now be detached from a monitor and all
+							input devices.
+						</p>
+						<p>
+							As long as it's connected to a network, we're good to 
+							go!
+						</p>
+					</section>
+					<section>
+						<h1>Install an SSH Client</h1>
+						<p class="fragment fade-up">
+							On your primary computing device, install an SSH client.
+							Linux or Mac users should have one built in.
+						</p>
+						<div class="fragment fade-up">
+							<p>
+								Windows users can install one of the following:
+							</p>
+							<ul>
+								<li>
+									<a href="http://www.putty.org/" class="body-height">
+										<img src="images/putty-logo.png" alt="Putty Logo">								
+										Putty
+									</a>
+								</li>
+								<li>
+									<a href="https://git-scm.com/" class="body-height">
+										<img src="images/git-logo.svg" alt="Git Logo">
+										Git Bash
+									</a>								
+								</li>
+								<li>
+									<a href="https://www.cygwin.com/" class="body-height">
+										<img src="images/cygwin-logo.svg" alt="Cygwin Logo">
+										Cygwin
+									</a>								
+								</li>
+							</ul>
+						</div>					
+					</section>
 				</section>
 				<section>
+					<section>
+						<h1>Post-SSH Client Setup</h1>
+					</section>
 					<section>
 						<h1>User Setup</h1>
 						<p>
@@ -166,26 +167,45 @@
 							Disconnect as root and make sure the new account
 							works as expected. In fact, let's check for updates!
 						</p>
-						<pre><code class="hljs bash">sudo apt update &amp;&amp; sudo apt upgrade</code></pre>
+						<pre><code class="hljs bash">sudo apt-get update &amp;&amp; sudo apt-get upgrade</code></pre>
 						<p>
 							Note that system commands that can alter the system
 							must now be preceeded with "sudo".
 						</p>
 					</section>				
-				</section>
-				<section>
-					<h1>Disable Remote Root Access</h1>
-					<pre><code class="hljs bash">sudo sed -i "/^PermitRootLogin/c\PermitRootLogin no" /etc/ssh/sshd_config</code></pre>
-					<pre><code class="hljs bash">sudo service ssh reload</code></pre>
-				</section>
-				<section>
-					<h1>Install Git to Clone a Helper Script</h1>
-					<pre><code class="hljs bash">sudo apt install git</code></pre>
+					<section>
+						<h1>Disable Remote Root Access</h1>
+						<pre><code class="hljs bash">sudo sed -i "/^PermitRootLogin/c\PermitRootLogin no" /etc/ssh/sshd_config</code></pre>
+						<pre><code class="hljs bash">sudo service ssh reload</code></pre>
+					</section>
 				</section>
 				<section>
 					<section>
+						<h1>Install Samba</h1>
+						<pre><code class="hljs bash">sudo apt-get install samba</code></pre>
+					</section>
+					<section>
+						<h1>Add Network Shares</h1>
+<pre><code class="hljs bash">sudo mkdir -p /plex/Videos/Movies
+sudo chown -R nobody:nogroup /plex
+sudo chmod -R 777 /plex
+sudo net usershare add Movies /plex/Videos/Movies "Plex Movies" everyone:F 
+guest_ok=y
+
+sudo net usershare info --long Movies > /var/lib/samba/usershares/movies</code></pre>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>Install Git</h1>
+						<pre><code class="hljs bash">sudo apt install git</code></pre>
+					</section>
+					<section>
 						<h1>Clone the Plex Update Script</h1>
 						<pre><code class="hljs bash">sudo git clone https://github.com/mrworf/plexupdate.git /opt/plexupdate</code></pre>
+						<a href="https://github.com/mrworf/plexupdate" class="float-left">
+							<img src="images/plexupdate.png" alt="Plex Update Icon">
+						</a>
 						<p class="fragment fade-up">
 							Why /opt? /opt is for unbundled software not provided by a package manager.
 						</p>
@@ -194,20 +214,150 @@
 						<h1>Symlinking into the Path</h1>
 						<pre><code class="hljs bash">sudo ln -s /opt/plexupdate/plexupdate.sh /usr/local/bin/plexupdate</code></pre>
 					</section>
+					<section>
+						<h1>Install Plex</h1>
+						<pre><code class="hljs bash">sudo plexupdate -p -a</code></pre>
+					</section>
 				</section>
 				<section>
-					<h1>Install Plex</h1>
-					<pre><code class="hljs bash">sudo plexupdate -p -a</code></pre>
+					<section>
+						<h1>Accessing Plex</h1>
+						<p>
+							Open a web browser on your primary computing device and
+							access your Plex server at the specified URL.
+						</p>
+						<pre><code>http://{{servername}}:32400/web/index.html</code></pre>
+					</section>
+					<section>
+						<img src="images/plex-login.png" alt="Plex Login Screen">
+					</section>
+					<section>
+						<h1>Why Do I Need an Account?</h1>
+						<p>
+							Plex offers an account to make a few features easier. 
+						</p>
+						<ul>
+							<li class="fragment fade-up">
+								Sharing media with a set list of friends
+							</li>
+							<li class="fragment fade-up">
+								Accessing media through Plex's hosted service
+								located at
+								<a href="https://app.plex.tv/web/app">https://app.plex.tv/web/app</a>
+							</li>
+						</ul>
+					</section>
+					<section>
+						<h1>Paying for Plex</h1>
+						<p>
+							Paying for Plex isn't required, but does grant 
+							access to a few additional features.
+						</p>
+						<ul>
+							<li class="fragment fade-up">
+								Mobile sync
+							</li>
+							<li class="fragment fade-up">
+								Cloud sync
+							</li>
+							<li class="fragment fade-up">
+								Trailers and extras for films and TV shows
+							</li>
+							<li class="fragment fade-up">
+								Camera upload from a mobile device
+							</li>
+							<li class="fragment fade-up">
+								Music identification if no tags or metadata are
+								present
+							</li>
+							<li class="fragment fade-up">
+								...and a few other features listed on
+								<a href="https://www.plex.tv/features/">https://www.plex.tv/features/</a>
+							</li>
+						</ul>
+						<a class="align-center" href="https://www.plex.tv/features/plex-pass/">
+							<img class="fragment fade-up" src="images/plex-pricing.png" alt="Plex Pricing Options">
+						</a>
+					</section>
+					<section>
+						<h1>Plex Collections</h1>
+						<img class="float-right" src="images/plex-addlibrarymovies.png" alt="Screenshot of Adding a Plex Collection for Movies">
+						<p>
+							Collections are how Plex knows how to organize 
+							media. Prominant collections include:
+						</p>
+						<ul>
+							<li class="fragment fade-up">
+								Movies
+							</li>
+							<li class="fragment fade-up">
+								TV Shows
+							</li>
+							<li class="fragment fade-up">
+								Music
+							</li>
+							<li class="fragment fade-up">
+								Photos
+							</li>
+						</ul>
+					</section>		
 				</section>
 				<section>
-					<h1>Accessing Plex</h1>
+					<section>
+						<h1>Abusing Amazon Cloud Drive</h1>
+						<a class="align-center" href="https://www.amazon.com/clouddrive/home">
+							<img src="images/amazonclouddrive-pricing.png" alt="Amazon Cloud Drive Pricing">
+						</a>
+					</section>
+					<section>
+						<h1>Plex Cloud Sync</h1>
+						<p>
+							Buried in the plex.tv account
+							<a href="https://plex.tv/cloudsync/providers">settings...</a>
+							<a href="https://plex.tv/cloudsync/providers">
+								<img class="align-center" src="images/plex-cloudsync.png" alt="Plex Cloud Sync Settings Screenshot"> 
+							</a>
+						</p>
+					</section>
+					<section>
+						<h1>With Amazon's Blessing?</h1>
+						<a class="float-right" href="https://www.plex.tv/blog/book-plex-volume-3-plex-cloud/">
+							<img src="images/plex-cloud.jpg" alt="Plex Cloud Announcement">
+						</a>
+						<p>
+							Plex recently announced a partnership with Amazon
+							to enable media syncing through the Plex interface
+							for Plex Pass users.
+						</p>
+					</section>
+				</section>
+				<section>
+					<h1>Go Build Your Plex Server!</h1>
 					<p>
-						Open a web browser on your primary computing device and
-						access your Plex server at the specified URL.
+						Plex runs everywhere:
 					</p>
-					<a href="http://{{servername}}:32400/plex/web/index.html">
-						<pre><code>http://{{servername}}:32400/plex/web/index.html</code></pre>
-					</a>
+					<ul class="float-left">
+						<li>
+							Android
+						</li>
+						<li>
+							iOS
+						</li>
+						<li>
+							Web Browsers
+						</li>
+					</ul>
+					<ul class="float-right">
+						<li>
+							Google Cast
+						</li>
+						<li>
+							Roku/Smart TVs
+						</li>
+						<li>
+							...and more!
+						</li>
+					</ul>
 				</section>
 			</div>
 		</div>

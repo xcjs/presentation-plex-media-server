@@ -2,12 +2,22 @@
 	width: auto;
 }
 
+.reveal img.align-center, 
+.reveal .align-center img {
+	max-height: 65vh;
+}
+
 .reveal .slides {
 	text-align: left;
 }
 
 .reveal .slides h1 {
 	font-size: 3.25rem;
+	text-align: center;
+}
+
+.reveal .slides h2 {
+	font-size: 1.25rem;
 	text-align: center;
 }
 
@@ -26,9 +36,21 @@
 	border-width: 0;
 }
 
+.reveal .float-left,
+.reveal .float-right {
+	float: left;
+	height: auto;
+	margin: 0 1rem 1rem 0;
+	max-width: 45%;
+}
+
 .reveal .float-right {
 	float: right;
-	height: auto;
 	margin: 0 0 1rem 1rem;
-	max-width: 25%;
+}
+
+.reveal .align-center {
+	display: block;
+	margin:  auto;
+	text-align: center;
 }

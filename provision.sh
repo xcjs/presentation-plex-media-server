@@ -1,4 +1,4 @@
-#!/bin/bash
+ #!/bin/bash
 
 echo "Checking for operating system updates..."
 sudo apt-get -qq update
@@ -12,6 +12,12 @@ sudo apt-get -qq autoremove
 echo "Installing git..."
 sudo apt-get -qq install git
 
+echo "Installing unzip..."
+sudo apt-get -qq install unzip
+
+echo "Installing samba..."
+sudo apt-get -qq install samba
+
 echo "Cloning the plexupdate script to /opt..."
 sudo git clone https://github.com/mrworf/plexupdate.git /opt/plexupdate
 
@@ -20,3 +26,5 @@ sudo ln -s /opt/plexupdate/plexupdate.sh /usr/local/bin/plexupdate
 
 echo "Installing Plex..."
 sudo plexupdate -p -a
+
+echo "You can now access Plex at http://localhost:32400/web/index.html"
